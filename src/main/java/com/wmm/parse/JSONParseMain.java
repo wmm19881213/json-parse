@@ -20,8 +20,8 @@ public class JSONParseMain {
 //                add(JSONParseConstants.JSON_ROOT);// 根标签
 //                add( "response");
 //                add("response.items");
-                add( "RESPONSE");
-                add("RESPONSE.ITEMS");
+                add( "response");
+                add("response.items");
             }
         };
         Map<String, List<Map<String, String>>> res = parseJSON(JSONObject.fromObject(jsonStr).toString(),tags);

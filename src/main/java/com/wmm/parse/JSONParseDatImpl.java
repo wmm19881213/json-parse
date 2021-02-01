@@ -70,7 +70,7 @@ public class JSONParseDatImpl extends JSONParseAbstract{
 
     @Override
     public String convertJSONKey(Object tag) {
-        return String.valueOf(tag).toUpperCase();
+        return String.valueOf(tag);
     }
 
     @Override
