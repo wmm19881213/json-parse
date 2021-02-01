@@ -1,5 +1,5 @@
-＃json-parse
-##简单使用和介绍
+＃ json-parse
+## 简单使用和介绍
 旨在将JSON结构化数据转换为按照JSON 标签转换成二维表格式；
 具体如下：
   在实际开发过程中经常遇见需要将JSON数据转换成二维表的情形，在模型人员根据JSON设计二维表时，一般会将某一标签下的数据转换成二维表如下json：
@@ -19,21 +19,21 @@
   上述json是将原json转换为Map<String,ListMap<String,Object>>,再转换为JSON。
   开发人员可以根据上述已经转换的对象和表中的所需要的对应json值组合成需要二维表。
   
-  ##展开说明
+  ## 展开说明
   原理：首先遍历json，当json标签等于对应二维表时将此标签下的值转换成Map<String,Object>,其中Object可能为String，List<Map<String,Object>>,null,如此递归遍历，生成最后的Map<String, List<Map<String,Object>>>;最后调用转换方法生成二维表；
   
-  ##扩展
+  ## 扩展
   1、根标签使用项目提供的默认标签：JSONParseConstants.JSON_ROOT
   2、转换JSON key值：override convertJSONKey方法
   3、修改转换二维表的方式：override covertResults方法，对于特殊的json 标签可以使用此方法单独处理
   
   
-  ##注意
+  ## 注意
   1、表对应的标签采用“.”分隔，不要带跟标签。
   2、对于较大的json数据且层数较多，一定要增加表名对应的标签，否则可能会导致内存溢出。
   
-  ##最后
-  本项目目前为呱呱学习项目，将持续更新中。
+  ## 最后
+  本项目目前为呱呱学习小组项目，将持续更新中。
   
   
   
