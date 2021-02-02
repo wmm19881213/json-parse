@@ -1,11 +1,13 @@
-package com.wmm.parse;
+package com.wmm.parse.context;
+
+import com.wmm.parse.context.JSONParseContext;
 
 import java.util.*;
 
 /**
  * 记录JSONObject上下文
  */
-public abstract class JSONParseAbstractContext implements JSONParseContext{
+public abstract class JSONParseAbstractContext implements JSONParseContext {
 
     private final Map<String, List<Map<String,Object>>> results = new HashMap<String, List<Map<String,Object>>>();
 
@@ -39,7 +41,6 @@ public abstract class JSONParseAbstractContext implements JSONParseContext{
     }
 
     public boolean setResult(String tag, List<Map<String, Object>> result) {
-
         if(!tags.contains(tag) || result == null) return false;
         List<Map<String,Object>> res = this.getResults().get(tag);
         if(res == null){

@@ -1,11 +1,11 @@
-package com.wmm.parse;
+package com.wmm.parse.context;
 
-import net.sf.json.JSONObject;
+import com.wmm.parse.util.MyCollections;
 
 import java.util.*;
 
-public class JSONObjectDatContext extends JSONParseAbstractContext{
-    public JSONObjectDatContext(Set<String> tags) {
+public class JSONParseDefaultContext extends JSONParseAbstractContext {
+    public JSONParseDefaultContext(Set<String> tags) {
 //        tags.add(JSONParseConstants.JSON_ROOT);//增加根标签
         this.setTags(tags);
     }

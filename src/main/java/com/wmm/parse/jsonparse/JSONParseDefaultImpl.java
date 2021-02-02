@@ -1,5 +1,7 @@
-package com.wmm.parse;
+package com.wmm.parse.jsonparse;
 
+import com.wmm.parse.constants.JSONParseConstants;
+import com.wmm.parse.context.JSONParseContext;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -7,10 +9,10 @@ import net.sf.json.util.JSONUtils;
 
 import java.util.*;
 
-public class JSONParseDatImpl extends JSONParseAbstract{
+public class JSONParseDefaultImpl extends JSONParseAbstract {
 
     @Override
-    public List<Map<String, Object>>  parseJson(JSONParseContext context,  JSON json, String parrArrID, String arrID,String tag){
+    public List<Map<String, Object>>  parseJson(JSONParseContext context, JSON json, String parrArrID, String arrID, String tag){
         List<Map<String, Object>>  result = null;
         //json
         if (json != null && !JSONUtils.isNull(json)) {
@@ -22,11 +24,12 @@ public class JSONParseDatImpl extends JSONParseAbstract{
         } else {
             return null;
         }
+        if(tag == null)return null;//标签为空时丢弃
         return context.setResult(tag,result)?null:result;
     }
 
     private List<Map<String, Object>> parseJSONObject(JSONParseContext context,JSONObject jsonObj, String parrArrID, String arrID,String tag){
-        final Map<String,Object> tagRes = new HashMap<String, Object>();//object可能是如下两种情况：String，List<Map<String, String>>,null
+        final Map<String,Object> tagRes = new HashMap<String, Object>();//object可能是如下三种情况：String，List<Map<String, String>>,null
         Iterator<?> it = jsonObj.keys();
         while(it.hasNext()){
             Object jsonKey = it.next();
@@ -75,7 +78,6 @@ public class JSONParseDatImpl extends JSONParseAbstract{
 
     @Override
     public String createJSONTag(Object tag, Object nextTag) {
-        tag = convertJSONKey(tag);
         if(tag == null || JSONParseConstants.JSON_ROOT.equals(tag)){
             return convertJSONKey(nextTag);
         }

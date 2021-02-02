@@ -1,0 +1,32 @@
+response:
+  - originPlace
+  - idCardNo
+  - brandModel
+  - paymentVoucherNo
+  - totalTax
+  - amountTaxCn
+  - salesBank
+  - salesPhone
+  - invoiceNumber
+  - invoiceType
+  - machineCode
+  - salesTaxNo
+  - invoiceCode
+  - purchaserName
+  - checkCode
+  - billingDate
+  - totalAmount
+  - salesAddressPhone
+  - salesName
+  - remarks
+  - amountTax
+response.items:
+  - unitPrice
+  - taxRate
+  - unit
+  - amount
+  - specificationModel
+  - quantity
+  - tax
+  - ARR_ID
+  - commodityName

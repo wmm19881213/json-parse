@@ -1,5 +1,6 @@
-package com.wmm.parse;
+package com.wmm.parse.test;
 
+import com.wmm.parse.util.MyCollections;
 import net.sf.json.JSONArray;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

@@ -1,4 +1,4 @@
-package com.wmm.parse;
+package com.wmm.parse.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;

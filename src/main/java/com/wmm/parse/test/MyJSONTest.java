@@ -1,7 +1,6 @@
-package com.wmm.parse;
+package com.wmm.parse.test;
 
 import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;

@@ -1,7 +1,7 @@
-package com.wmm.parse;
+package com.wmm.parse.jsonparse;
 
+import com.wmm.parse.context.JSONParseContext;
 import net.sf.json.JSON;
-import net.sf.json.JSONObject;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +13,8 @@ public interface JSONParse {
      List<Map<String, Object>> parseJson(JSONParseContext context, JSON json,String arrID,String tags);
 
      List<Map<String, Object>> parseJson(JSONParseContext context, JSON json,String tags);
+
+     List<Map<String, Object>> parseJson(JSONParseContext context, JSON json);
 
      //转换JSON key值
      String convertJSONKey(Object tag);
