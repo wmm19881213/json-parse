@@ -25,7 +25,7 @@ public class JSONParseDefaultImpl extends JSONParseAbstract {
             return null;
         }
         if(tag == null)return null;//标签为空时丢弃
-        return context.setResult(tag,result)?null:result;
+        return context.setResult(convertJSONKey(tag),result)?null:result;
     }
 
     private List<Map<String, Object>> parseJSONObject(JSONParseContext context,JSONObject jsonObj, String parrArrID, String arrID,String tag){
@@ -59,7 +59,9 @@ public class JSONParseDefaultImpl extends JSONParseAbstract {
             final Object valObj = jsonArray.get(i);
             if(valObj instanceof JSON){//JSON
                 final List<Map<String, Object>> tagRes = parseJson( context, (JSON)valObj,  parrArrID,  String.valueOf(i), tag);
-                if(tagRes!=null)new HashMap<String, Object>(){{put(tag,tagRes);}};
+                if(tagRes!=null){
+                    results.add(new HashMap<String, Object>(){{put(tag,tagRes);}});
+                }
             }else{//非JSON时直接转换成String
 //                Map<String,Object> result = new HashMap<>();
                 results.add(new HashMap<String, Object>(){{put(tag,String.valueOf(valObj));}});

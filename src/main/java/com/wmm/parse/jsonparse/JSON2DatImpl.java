@@ -34,7 +34,7 @@ public  class JSON2DatImpl implements JSON2Dat{
         if(seperate == null)seperate = JSONParseConstants.SYSBOL_SEP_DEFAULT;
         if(lineSeperate == null)lineSeperate=JSONParseConstants.SYSBOL_LINE_SEP_DEFAULT;
        JSONParseDefaultImpl jsonParse = new JSONParseDefaultImpl();
-       jsonParse.parseJson(this.context,json);
+       jsonParse.parseJson(this.context,json,JSONParseConstants.JSON_ROOT);
        return convert2Dimensional(seperate,lineSeperate);
     }
 
